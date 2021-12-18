@@ -39,11 +39,7 @@ class DriverManagement
         $baseFarePrice = null,
         $baseFareDistance = null
     ) {
-        if (!isset(self::$drivers[$oldEmail])) {
-            throw new DriverNotFoundException(
-                sprintf('Driver with "%s" does not exist.', $oldEmail)
-            );
-        }
+        self::validateDriver($oldEmail);
         $driver = self::$drivers[$oldEmail];
         if (!empty($name)) {
             $driver->setName($name);
@@ -79,5 +75,22 @@ class DriverManagement
     public static function getList()
     {
         return array_values(self::$drivers);
+    }
+
+    public static function get($email)
+    {
+        if (isset(self::$drivers[$email])) {
+            return self::$drivers[$email];
+        }
+        return null;
+    }
+
+    private static function validateDriver($email)
+    {
+        if (empty(self::$drivers[$email])) {
+            throw new DriverNotFoundException(
+                sprintf('Driver with "%s" does not exist.', $email)
+            );
+        }
     }
 }

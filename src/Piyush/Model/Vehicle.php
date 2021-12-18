@@ -36,4 +36,12 @@ class Vehicle
         $this->value = $value;
         return $this;
     }
+
+    public function toArray()
+    {
+        return [
+            'label' => $this->getLabel(),
+            'value' => $this->getValue(),
+        ];
+    }
 }

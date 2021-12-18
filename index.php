@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Alex Jefferson – Tech Recruiter</title>
-</head>
-
-<body>
-    <h1>Hello world!</h1>
+<?php include '../layout/header.php' ?>
+    <h1>Welcome to Travel Fare</h1>
+    <div>
+        <ul><li><a href="/travel-fare/controller/driver/index.php">Driver Management</a></li></ul>
+        <ul><li><a href="/travel-fare/controller/vehicle/index.php">Vehicle Management</a></li></ul>
+        <ul><li><a href="/travel-fare/controller/fare/index.php">Fare Management</a></li></ul>
+    </div>
 </body>
 
 </html>
