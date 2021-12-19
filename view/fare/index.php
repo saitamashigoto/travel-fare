@@ -57,6 +57,8 @@
                 include './upload.php';
             }
         ?>
+    <div class="column is-12 has-text-centered">
+        <?php include '../layout/homepage.php' ?>
     </div>
-    <?php include '../layout/homepage.php' ?>
+    </div>
     <?php include '../layout/footer.php' ?>

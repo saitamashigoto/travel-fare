@@ -1,6 +1,6 @@
-<div>
-    <form enctype="multipart/form-data" method="POST" action="/travel-fare/controller/fare/upload.php">
-        <div class="file has-name">
+<form enctype="multipart/form-data" method="POST" action="/travel-fare/controller/fare/upload.php">
+    <div class="field is-grouped is-grouped-centered">
+        <div class="control file has-name">
             <label class="file-label">
                 <input class="file-input" id="fareData" type="file" name="fareData">
                 <span class="file-cta">
@@ -13,9 +13,8 @@
                 </span>
             </label>
         </div>
-    
-        <div>
+        <div class="control">
             <button class="button is-primary" type="submit" name="upload" type="button">Upload</button>
         </div>
-    </form>
-</div>
+    </div>
+</form>
