@@ -3,33 +3,43 @@
     use Piyush\Model\VehicleManagement;
     include '../layout/header.php'
 ?>
-    <h1>Vehicle Management</h1>
+    <h1 class="title has-text-centered has-text-primary">Vehicle Management</h1>
     <?php $vehicles = VehicleManagement::getList(); ?>
-    <div>
-        <?php if (!empty($vehicles)): ?>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Label</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($vehicles as $vehicle): ?>
-                        <tr>
-                            <td><?= $vehicle->getLabel(); ?></td>
-                            <td><a href="/travel-fare/controller/vehicle/edit.php?value=<?= $vehicle->getValue(); ?>">Edit</a></td>
-                            <td><a href="/travel-fare/controller/vehicle/delete.php?value=<?= $vehicle->getValue(); ?>">Delete</a></td>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-        <?php else: ?>
-            <p>No vehicle exist. Please add some.</p>
-        <?php endif; ?>
+    <div class="columns is-multiline is-mobile is-centered">
+        <div class="column is-12 has-text-centered">
+            <?php if (!empty($vehicles)): ?>
+                <div class="table-container">
+                    <table class="table is-fullwidth">
+                        <thead>
+                            <tr>
+                                <th class="is-primary">Label</th>
+                                <th class="is-primary" colspan="2">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($vehicles as $vehicle): ?>
+                                <tr>
+                                    <td><?= $vehicle->getLabel(); ?></td>
+                                    <td><a class="button is-primary" href="/travel-fare/controller/vehicle/edit.php?value=<?= $vehicle->getValue(); ?>">Edit</a></td>
+                                    <td><a class="button is-primary" href="/travel-fare/controller/vehicle/delete.php?value=<?= $vehicle->getValue(); ?>">Delete</a></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            <?php else: ?>
+                <p class="has-text-danger is-size-4">No vehicle exist. Please add some.</p>
+            <?php endif; ?>
+        </div>
+        <div class="column is-12 has-text-centered">
+            <div class="columns">
+                <div class="column is-6">
+                    <?php include './add_button.php' ?>
+                </div>
+                <div class="column is-6">
+                    <?php include '../layout/homepage.php' ?>
+                </div>
+            </div>
+        </div>
     </div>
-    
-    <?php include './add_button.php' ?>
-    <?php include '../layout/homepage.php' ?>
-</body>
-
-</html>
+    <?php include '../layout/footer.php' ?>

@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html class="has-background-info-light">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link href="/travel-fare/static/css/styles.css" rel="stylesheet">
     <title>Travel Fare</title>
 </head>
 
-<body>
+<body class="hero is-fullheight">
+    <div class="hero-body is-fullwidth">
+        <div class="container">

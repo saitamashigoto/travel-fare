@@ -45,7 +45,7 @@
         </div>
         <input type="hidden" name="oldEmail" value="<?= $driver ? $driver->getEmail() : "" ?>" >
         <div>
-            <button type="submit" click=>Save</button>
+            <button type="submit" >Save</button>
         </div>
     </form>
     <?php else: ?>
@@ -53,6 +53,4 @@
         <?php include '../vehicle/add_button.php' ?>
     <?php endif; ?>
     <?php include '../layout/homepage.php' ?>
-</body>
-
-</html>
+    <?php include '../layout/footer.php' ?>

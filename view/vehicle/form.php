@@ -20,10 +20,8 @@
         </div>
         <input type="hidden" name="oldValue" value="<?= $vehicle ? $vehicle->getValue() : "" ?>" >
         <div>
-            <button type="submit" click=>Save</button>
+            <button type="submit" >Save</button>
         </div>
     </form>
     <?php include '../layout/homepage.php' ?>
-</body>
-
-</html>
+    <?php include '../layout/footer.php' ?>

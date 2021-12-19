@@ -1,2 +1,6 @@
 
-<div><button onclick="location.href='<?= '/travel-fare/index.php' ?>';" type="button" click=>Home Page</button></div>
+<button class="button is-primary"
+    onclick="location.href='<?= '/travel-fare/index.php' ?>';"
+    type="button"
+>Home Page
+</button>
