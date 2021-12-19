@@ -19,9 +19,8 @@
                         <tr>
                             <td><?= $driver->getName(); ?></td>
                             <td><?= $driver->getEmail(); ?></td>
-                            <td><a href="/travel-fare/controller/driver/view.php?value=<?= $driver->getEmail(); ?>">View</a></td>
-                            <td><a href="/travel-fare/controller/driver/edit.php?value=<?= $driver->getEmail(); ?>">Edit</a></td>
-                            <td><a href="/travel-fare/controller/driver/delete.php?value=<?= $driver->getEmail(); ?>">Delete</a></td>
+                            <td><a href="/travel-fare/controller/driver/edit.php?email=<?= $driver->getEmail(); ?>">Edit</a></td>
+                            <td><a href="/travel-fare/controller/driver/delete.php?email=<?= $driver->getEmail(); ?>">Delete</a></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
@@ -31,7 +30,7 @@
         <?php endif; ?>
     </div>
     <div><button onclick="location.href='<?= '/travel-fare/controller/driver/new.php' ?>';" type="button" click=>Add driver</button></div>
-    <?php include '../layout/footer.php' ?>
+    <?php include '../layout/homepage.php' ?>
 </body>
 
 </html>

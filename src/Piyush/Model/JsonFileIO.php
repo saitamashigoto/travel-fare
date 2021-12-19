@@ -7,7 +7,7 @@ class JsonFileIO
     public static function readFile($relativePath)
     {
         $absolutePath = self::buildAbsFilePath($relativePath);
-        $stringContents = self::readFileContents($absolutePath);
+        $stringContents = self::readFileContents($absolutePath) ?: "[]";
         return self::decodeJson($stringContents);
     }
 

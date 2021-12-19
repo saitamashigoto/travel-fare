@@ -27,8 +27,9 @@
             <p>No vehicle exist. Please add some.</p>
         <?php endif; ?>
     </div>
-    <div><button onclick="location.href='<?= '/travel-fare/controller/vehicle/new.php' ?>';" type="button" click=>Add Vehicle</button></div>
-    <?php include '../layout/footer.php' ?>
+    
+    <?php include './add_button.php' ?>
+    <?php include '../layout/homepage.php' ?>
 </body>
 
 </html>

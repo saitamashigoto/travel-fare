@@ -1,0 +1,1 @@
+<div><button onclick="location.href='<?= '/travel-fare/controller/driver/new.php' ?>';" type="button" click=>Add Driver</button></div>

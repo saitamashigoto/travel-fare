@@ -22,7 +22,7 @@ class Driver
         $this->name = $name;
         $this->surname = $surname;
         $this->email = $email;
-        $this->verhicleType = $verhicleType;
+        $this->vehicleType = $vehicleType;
         $this->baseFarePrice = $baseFarePrice;
         $this->baseFareDistance = $baseFareDistance;
     }
@@ -92,6 +92,19 @@ class Driver
         $this->baseFareDistance = $baseFareDistance;
         return $this;
     }
+
+    public function toArray()
+    {
+        return [
+            'name' => $this->getName(),
+            'surname' => $this->getSurname(),
+            'email' => $this->getEmail(),
+            'vehicleType' => $this->getVehicleType(),
+            'baseFarePrice' => $this->getBaseFarePrice(),
+            'baseFareDistance' => $this->getBaseFareDistance(),
+        ];
+    }
+
 
     public function calculateFare(
         $distanceTraveled,

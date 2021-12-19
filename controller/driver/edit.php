@@ -1,11 +1,11 @@
 <?php
 
 require '../../src/Piyush/autoload.php';
-use Piyush\Model\VehicleManagement;
+use Piyush\Model\DriverManagement;
 
-if (!empty($_GET['value'])) {
-    $value = $_GET['value'];
-    header('Location: /travel-fare/view/vehicle/form.php?value='.$value);
+if (!empty($_GET['email'])) {
+    $email = $_GET['email'];
+    header('Location: /travel-fare/view/driver/form.php?email='.$email);
 } else {
-    header('Location: /travel-fare/view/vehicle/index.php');
+    header('Location: /travel-fare/view/driver/index.php');
 }

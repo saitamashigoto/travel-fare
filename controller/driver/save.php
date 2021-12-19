@@ -1,11 +1,38 @@
 <?php
 ini_set('display_errors', 1);
 require '../../src/Piyush/autoload.php';
-use Piyush\Model\VehicleManagement;
 
-if ( (!empty($_POST['value'])) && (!empty($_POST['label'])) && empty($_POST['oldValue']) ) {
-    VehicleManagement::register($_POST['value'], $_POST['label']);
-} else if (((!empty($_POST['value'])) || (!empty($_POST['label']))) && (!empty($_POST['oldValue'])) ) {
-    VehicleManagement::update($_POST['oldValue'], $_POST['label'], $_POST['value']);
+use Piyush\Model\DriverManagement;
+
+function canRegisterDriver()
+{
+    return
+    (!empty($_POST['name'])) &&
+    (!empty($_POST['surname'])) &&
+    (!empty($_POST['email'])) &&
+    (!empty($_POST['vehicleType'])) &&
+    (!empty($_POST['baseFarePrice'])) &&
+    (!empty($_POST['baseFareDistance']));
 }
-header('Location: /travel-fare/view/vehicle/index.php');
+
+function getDriverFields()
+{
+    return [
+        $_POST['name'] ?? "",
+        $_POST['surname'] ?? "",
+        $_POST['email'] ?? "",
+        $_POST['vehicleType'] ?? "",
+        $_POST['baseFarePrice'] ?? "",
+        $_POST['baseFareDistance'] ?? ""
+    ];
+}
+
+
+if (empty($_POST['oldEmail']) && canRegisterDriver()) {
+    DriverManagement::register(...getDriverFields());
+} elseif (!empty($_POST['oldEmail'])) {
+    DriverManagement::update($_POST['oldEmail'], ...getDriverFields());
+}
+
+header('Location: /travel-fare/view/driver/index.php');
+
