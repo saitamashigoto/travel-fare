@@ -4,12 +4,12 @@
     use Piyush\Model\DriverManagement;
 ?>
 <?php include '../layout/header.php' ?>
-    <h1 class="title has-text-centered has-text-primary"><?= $driver ? 'Edit: ' . $driver->getName() : 'New Driver'; ?></h1>
     <?php 
         $email = $_GET['email'] ?? '';
         $driver = DriverManagement::get($email);
         $vehicles = VehicleManagement::getList();
     ?>
+    <h1 class="title has-text-centered has-text-primary"><?= $driver ? 'Edit: ' . $driver->getName() : 'New Driver'; ?></h1>
         <div class="columns is-multiline is-mobile is-centered">
             <?php if (count($vehicles) > 0): ?>
                 <div class="column is-12">
