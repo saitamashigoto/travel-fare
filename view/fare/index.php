@@ -11,6 +11,11 @@
         <?php if (!empty($drivers)): 
             $fares = FareManagement::getList();
         ?>
+            <?php
+                if (!empty(DriverManagement::getList())) {
+                    include './upload.php';
+                }
+            ?>
             <div class="column is-12 has-text-centered">
                 <?php if (empty($fares)): ?>
                     <p class="has-text-danger is-size-4">
@@ -52,13 +57,6 @@
                 <?php include '../driver/add_button.php' ?>
             </div>
         <?php endif; ?>
-        <?php
-            if (!empty(DriverManagement::getList())) {
-                include './upload.php';
-            }
-        ?>
-    <div class="column is-12 has-text-centered">
-        <?php include '../layout/homepage.php' ?>
-    </div>
+        <?php include '../layout/footer-navigation.php' ?>
     </div>
     <?php include '../layout/footer.php' ?>

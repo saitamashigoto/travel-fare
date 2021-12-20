@@ -7,6 +7,11 @@
     <div class="columns is-multiline is-mobile is-centered">
         <?php $drivers = DriverManagement::getList(); ?>
         <div class="column is-12 has-text-centered">
+            <div class="column is-12 has-text-right">
+                <button class="button is-primary"
+                onclick="location.href='<?= '/travel-fare/controller/driver/new.php' ?>';"
+                type="button" >Add driver</button>
+            </div>
             <?php if (!empty($drivers)): ?>
                 <div class="table-container">
                     <table class="table is-fullwidth">
@@ -33,17 +38,7 @@
                 <p class="has-text-danger is-size-4">No driver exist. Please add some.</p>
             <?php endif; ?>
         </div>
-        <div class="column is-12 has-text-centered">
-            <div class="columns">
-                <div class="column is-6">
-                    <button class="button is-primary"
-                    onclick="location.href='<?= '/travel-fare/controller/driver/new.php' ?>';"
-                    type="button" >Add driver</button>
-                </div>
-                <div class="column is-6">
-                    <?php include '../layout/homepage.php' ?>
-                </div>
-            </div>
-        </div>
+        
+        <?php include '../layout/footer-navigation.php' ?>
     </div>
     <?php include '../layout/footer.php' ?>

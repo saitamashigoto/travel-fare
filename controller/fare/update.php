@@ -2,9 +2,9 @@
 ini_set('display_errors', 1);
 require '../../src/Piyush/autoload.php';
 
-use Piyush\Model\FairManagement;
+use Piyush\Model\FareManagement;
 
-if (empty($_GET['hash'])) {
+if (!empty($_GET['hash'])) {
     FareManagement::update($_GET['hash']);
 }
 

@@ -6,6 +6,9 @@
     <h1 class="title has-text-centered has-text-primary">Vehicle Management</h1>
     <?php $vehicles = VehicleManagement::getList(); ?>
     <div class="columns is-multiline is-mobile is-centered">
+        <div class="column is-12 has-text-right">
+            <?php include './add_button.php' ?>
+        </div>
         <div class="column is-12 has-text-centered">
             <?php if (!empty($vehicles)): ?>
                 <div class="table-container">
@@ -31,15 +34,7 @@
                 <p class="has-text-danger is-size-4">No vehicle exist. Please add some.</p>
             <?php endif; ?>
         </div>
-        <div class="column is-12 has-text-centered">
-            <div class="columns">
-                <div class="column is-6">
-                    <?php include './add_button.php' ?>
-                </div>
-                <div class="column is-6">
-                    <?php include '../layout/homepage.php' ?>
-                </div>
-            </div>
-        </div>
+        
+        <?php include '../layout/footer-navigation.php' ?>
     </div>
     <?php include '../layout/footer.php' ?>

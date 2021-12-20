@@ -1,2 +1,2 @@
-# travel-fare
+# Travel Fare Application
 Travel Fare

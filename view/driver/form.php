@@ -75,12 +75,6 @@
                     <?php include '../vehicle/add_button.php' ?>
                 </div>
             <?php endif; ?>
-        <div class="column is-12 has-text-centered">
-            <div class="columns">
-                <div class="column is-12">
-                    <?php include '../layout/homepage.php' ?>
-                </div>
-            </div>
-        </div>
+            <?php include '../layout/footer-navigation.php' ?>
     </div>
     <?php include '../layout/footer.php' ?>
